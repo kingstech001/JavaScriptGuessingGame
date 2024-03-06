@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   display: flex;
@@ -10,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .main-BG {
   background-color: rgb(68, 68, 182);
   height: 80vh;
@@ -24,15 +26,18 @@ body {
   width: 40%;
   height: 40vh;
 }
+
 .heading {
   border-left: 5px solid white;
   border-radius: 5px;
 }
+
 h1 {
   color: white;
   font-size: clamp(3rem, 5vw, 4.2rem);
   padding-left: 5px;
 }
+
 .form {
   background-color: white;
   color: gray;
@@ -43,6 +48,7 @@ h1 {
   justify-content: center;
   gap: 1rem;
 }
+
 form {
   width: 100%;
   display: flex;
@@ -51,6 +57,7 @@ form {
   gap: 1rem;
   flex-wrap: wrap;
 }
+
 input {
   flex: 0 0 30%;
   width: 50px;
@@ -64,19 +71,29 @@ input[type="submit"] {
   border: none;
   color: white;
 }
+
 input[type="number"] {
   padding-left: 15px;
   border: 1px solid gray;
 }
 
-@media only screen and (max-width:700px) {
-  .main-BG{
+@media only screen and (max-width: 700px) {
+  .main-BG {
     flex-direction: column;
   }
 
   .main-BG {
-  height: 100vh;
-}
+    height: 100vh;
+  }
+
+  .main-BG {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .main-BG div {
+    width: 100%;
+  }
 }
 
 /* :root {
