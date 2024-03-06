@@ -43,14 +43,8 @@ function getValue() {
 function clickCounts() {
     click--;
     numberOfClick.textContent = click;
-    if (inputValue > guess && click === 0) {
-        result.innerHTML = `you gues is high and the guess is ${guess}`
-    }
-    else if (inputValue < guess && click === 0) {
-        result.innerHTML = `you gues is low and the guess is ${guess}`
-    }
-    else if (click === 0) {
-        refresh.innerHTML = 'Refresh the page to play again'
+    if (click === 0) {
+        refresh.innerHTML = `Refresh the page to play again the guess is ${guess}`
         submit.style.display = 'none'
     }
 }
