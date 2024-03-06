@@ -17,6 +17,7 @@
 const inputValue = document.getElementById("value");
 const submit = document.getElementById("submit");
 const result = document.querySelector("#result")
+const refresh = document.getElementById("play-again")
 let randonNumber = Math.floor(Math.random() * 100 + 1);
 const numberOfClick = document.querySelector(".number-Of-click");
 let guess = randonNumber;
@@ -37,15 +38,19 @@ function getValue() {
     else if (inputValue.value == guess) {
         result.innerHTML = `You win !!!  Your guess was ${guess}`
         result.style.color = 'green'
-
     }
-
 }
 function clickCounts() {
     click--;
     numberOfClick.textContent = click;
-    if (click === 0) {
-        result.innerHTML = 'Refresh the page to play again'
+    if (inputValue > guess && click === 0) {
+        result.innerHTML = `you gues is high and the guess is ${guess}`
+    }
+    else if (inputValue < guess && click === 0) {
+        result.innerHTML = `you gues is low and the guess is ${guess}`
+    }
+    else if (click === 0) {
+        refresh.innerHTML = 'Refresh the page to play again'
         submit.style.display = 'none'
     }
 }
