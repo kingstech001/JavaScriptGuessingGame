@@ -18,10 +18,12 @@ const inputValue = document.getElementById("value");
 const submit = document.getElementById("submit");
 const result = document.querySelector("#result")
 const refresh = document.getElementById("play-again")
+const form = document.querySelector('.form')
 let randonNumber = Math.floor(Math.random() * 100 + 1);
 const numberOfClick = document.querySelector(".number-Of-click");
 let guess = randonNumber;
 let click = 5;
+console.log(guess)
 
 function getValue() {
     if (inputValue.value == "") {
@@ -38,16 +40,31 @@ function getValue() {
     else if (inputValue.value == guess) {
         result.innerHTML = `You win !!!  Your guess was ${guess}`
         result.style.color = 'green'
+        refresh.innerHTML = `Click the refresh button to play again`
+        submit.style.display = 'none'
+        reload()
     }
 }
 function clickCounts() {
     click--;
     numberOfClick.textContent = click;
     if (click === 0) {
-        refresh.innerHTML = `Refresh the page to play again the guess is ${guess}`
+        refresh.innerHTML = `Click the refresh button to play again the guess is ${guess}`
         submit.style.display = 'none'
+        reload()
+        result.style.display = 'none'
     }
 }
+const reload = () => {
+    const reload = document.createElement('button');
+    reload.textContent = 'refresh'
+    reload.className = 'reload'
+    form.appendChild(reload)
+    reload.addEventListener('click', () => {
+        location.reload()
+    })
+}
+
 submit.addEventListener("click", () => {
     clickCounts()
     getValue()

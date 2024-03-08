@@ -14,17 +14,17 @@ body {
 
 .main-BG {
   background-color: rgb(68, 68, 182);
-  height: 80vh;
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .main-BG div {
   width: 40%;
-  height: 40vh;
 }
 
 .heading {
@@ -34,16 +34,18 @@ body {
 
 h1 {
   color: white;
-  font-size: clamp(3rem, 5vw, 4.2rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   padding-left: 5px;
 }
 
 .form {
   background-color: white;
   color: gray;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
@@ -66,10 +68,15 @@ input {
   border-radius: 5px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+.reload {
   background-color: rgb(68, 68, 182);
   border: none;
   color: white;
+}
+.reload {
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 input[type="number"] {
@@ -80,10 +87,6 @@ input[type="number"] {
 @media only screen and (max-width: 700px) {
   .main-BG {
     flex-direction: column;
-  }
-
-  .main-BG {
-    /* height: 100vh; */
   }
 
   .main-BG {
